@@ -16,7 +16,8 @@ pipeline {
 		stage('Compile') {
 			steps {
                 // Get some code from a GitHub repository
-                git "${params.GIT_URL}"
+                git branch: "${params.GIT_BRANCH}",
+					url: "${params.GIT_URL}"
 
                 // Run Maven on a Unix agent.
                 sh "mvn clean compile"
