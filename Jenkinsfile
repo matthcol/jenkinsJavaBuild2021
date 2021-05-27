@@ -21,6 +21,7 @@ pipeline {
 
                 // Run Maven on a Unix agent.
                 sh "mvn clean compile"
+			}
 		}
         stage('Test') {
             steps {
