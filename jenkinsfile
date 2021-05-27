@@ -3,6 +3,7 @@ pipeline {
 
 	parameters {
         string(name: 'GIT_URL', defaultValue: 'https://github.com/matthcol/movieapijava2021')
+		string(name: 'GIT_BRANCH', defaultValue: 'master')
     }
 
     tools {
@@ -23,7 +24,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh "mvn test"
-				junit '**/target/surefire-reports/TEST-*.xml'
+				// junit '**/target/surefire-reports/TEST-*.xml'
             }
 		}
 		stage('Package') {
